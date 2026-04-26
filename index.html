@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dawsonye</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+    <h1>dx2ye</h1>
+    <p>I am currently studying computational mathematics @ the University of Waterloo. I am interested in:</p>
+    <ul>
+        <li>backend systems and distributed architecture</li>
+        <li>reactive and concurrent programming</li>
+        <li>APIs and service communication (gRPC, REST)</li>
+        <li>combinatorics and optimization</li>
+    </ul>
+    <p>I was a previous intern @ CIBC Capital Markets working on the
+        <a href="https://www.investorsedge.cibc.com/en/home.html" target="_blank">Investor's Edge</a> trading application (twice —
+        User Management, then core trading back-end). I then interned @ Sony PlayStation working on
+        reactive payments infrastructure for the
+        <a href="https://www.playstation.com/en-ca/playstation-network/" target="_blank">PlayStation Network</a>.
+        Most recently I interned @ Apple on the METS Architecture team, building a USDZ REST API to
+        streamline 3D design reviews for hardware Product Design teams.</p>
+    <p>I can be contacted through dx2ye [at] uwaterloo [dot] ca or on
+        <a href="https://www.linkedin.com/in/dawsonye/" target="_blank">LinkedIn</a>.</p>
+    <div class="carousel">
+        <button class="carousel-btn prev" onclick="moveSlide(-1)">&#8592;</button>
+        <div class="slides-wrapper">
+            <div class="slides" id="slides">
+                <img src="food/1.jpg">
+                <img src="food/2.jpg">
+                <img src="food/3.jpg">
+                <img src="food/4.jpg">
+                <img src="food/5.jpg">
+                <img src="food/6.jpg">
+                <img src="food/7.jpg">
+                <img src="food/8.jpg">
+            </div>
+        </div>
+        <button class="carousel-btn next" onclick="moveSlide(1)">&#8594;</button>
+    </div>
+    <p>I'm also trying to learn how to cook on the side. Here's some pics!</p>
+    <script>
+        let current = 0;
+        const slides = document.getElementById('slides');
+        function moveSlide(dir) {
+            const imgs = slides.querySelectorAll('img');
+            current = (current + dir + imgs.length) % imgs.length;
+            slides.style.transform = `translateX(-${current * 100}%)`;
+        }
+    </script>
+</body>
+</html>
